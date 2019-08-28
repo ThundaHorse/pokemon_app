@@ -1,5 +1,4 @@
 class Api::PokemonController < ApplicationController
-
   def index 
     pokemons = Pokemon.all
     @pokemons = pokemons.sort_by { |poke| poke.pokemon_id }
