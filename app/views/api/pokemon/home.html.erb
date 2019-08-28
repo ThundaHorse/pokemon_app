@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Pokemon stat lookup!</h1>
+  <% @pokemons.each do |pokemon| %>
+    <%= "#{pokemon.pokemon_id}. #{pokemon.name}" %>
+    <br>
+  <% end %>
+</div>

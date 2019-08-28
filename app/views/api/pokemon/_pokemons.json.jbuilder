@@ -1,3 +1,4 @@
+json.id pokemon.id
 json.pokemon_id pokemon.pokemon_id 
 json.name pokemon.name 
 json.stats do 
