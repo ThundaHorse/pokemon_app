@@ -1,4 +1,4 @@
-require 'poke-api-v2'
+# require 'poke-api-v2'
 # p PokeApi.get(pokemon: 1).sprites.front_default
 
 # Pokemon.all.each do |poke|
@@ -8,9 +8,9 @@ require 'poke-api-v2'
   # poke.update(url: "")
 # end 
 
-Pokemon.where(url: "").pluck(:id).each do |poke|
-  Pokemon.find(poke).update(url: PokeApi.get(pokemon: poke).sprites.front_default)
-end 
+# Pokemon.where(url: "").pluck(:id).each do |poke|
+#   Pokemon.find(poke).update(url: PokeApi.get(pokemon: poke).sprites.front_default)
+# end 
 
 # p PokeApi.get(pokemon: 490).sprites.front_default
 # require "http"
