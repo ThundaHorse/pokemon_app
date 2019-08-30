@@ -1,6 +1,8 @@
 json.id @pokemon.id
 json.pokemon_id @pokemon.pokemon_id 
 json.name @pokemon.name 
+json.url @pokemon.url
+json.type @pokemon.pokemon_type
 json.stats do 
   json.max_cp @pokemon.max_cp
   json.base_attack @pokemon.base_attack
@@ -18,4 +20,11 @@ json.encounter_stats do
   json.dodge_chance @pokemon.dodge_probability
   json.max_action_frequency @pokemon.max_action_frequency
   json.min_action_frequency @pokemon.min_action_frequency
+end 
+
+json.shiny do 
+  json.wild @pokemon.shiny_wild
+  json.egg @pokemon.shiny_egg
+  json.raid @pokemon.shiny_raid
+  json.evo @pokemon.shiny_evolution
 end 

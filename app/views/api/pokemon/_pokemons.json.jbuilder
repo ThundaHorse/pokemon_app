@@ -1,5 +1,6 @@
 json.id pokemon.id
 json.pokemon_id pokemon.pokemon_id 
+json.url pokemon.url
 json.name pokemon.name 
 json.stats do 
   json.max_cp pokemon.max_cp

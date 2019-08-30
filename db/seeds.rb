@@ -1,3 +1,18 @@
+require 'poke-api-v2'
+# p PokeApi.get(pokemon: 1).sprites.front_default
+
+# Pokemon.all.each do |poke|
+#   if PokeApi.get(pokemon: poke.pokemon_id)
+#     poke.update(url: PokeApi.get(pokemon: poke.pokemon_id).sprites.front_default)
+#   end
+  # poke.update(url: "")
+# end 
+
+Pokemon.where(url: "").pluck(:id).each do |poke|
+  Pokemon.find(poke).update(url: PokeApi.get(pokemon: poke).sprites.front_default)
+end 
+
+# p PokeApi.get(pokemon: 490).sprites.front_default
 # require "http"
 
 # Stats
@@ -95,5 +110,36 @@
 #     dodge_probability: poke["dodge_probability"],
 #     max_action_frequency: poke["max_pokemon_action_frequency"],
 #     min_action_frequency: poke["min_pokemon_action_frequency"]
+#   })
+# end 
+
+# Type 
+# types = HTTP.get "https://pokemon-go1.p.rapidapi.com/pokemon_types.json",
+#   headers:{
+#     "X-RapidAPI-Host" => "pokemon-go1.p.rapidapi.com",
+#     "X-RapidAPI-Key" => 'ENV["API_KEY"]'
+#   }
+
+#   type = types.parse 
+
+#   type.each do |poke| 
+#     Pokemon.find_by(pokemon_id: poke['pokemon_id']).update(pokemon_type: poke['type'].join(", "))
+#   end 
+
+# Shiny
+# response = HTTP.get "https://pokemon-go1.p.rapidapi.com/shiny_pokemon.json",
+#   headers:{
+#     "X-RapidAPI-Host" => "pokemon-go1.p.rapidapi.com",
+#     "X-RapidAPI-Key" => "ENV['API_KEY']"
+#   }
+
+# shiny = response.parse 
+
+# shiny.each do |k, v|
+#   Pokemon.find_by(pokemon_id: v["id"]).update({
+#     shiny_egg: v["found_egg"],
+#     shiny_evolution: v["found_evolution"],
+#     shiny_raid: v["found_raid"],
+#     shiny_wild: v["found_wild"]
 #   })
 # end 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_182307) do
+ActiveRecord::Schema.define(version: 2019_08_30_020618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 2019_08_28_182307) do
     t.float "min_action_frequency", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "pokemon_type"
+    t.boolean "shiny_egg", default: false
+    t.boolean "shiny_evolution", default: false
+    t.boolean "shiny_raid", default: false
+    t.boolean "shiny_wild", default: false
+    t.text "url"
   end
 
   create_table "users", force: :cascade do |t|
