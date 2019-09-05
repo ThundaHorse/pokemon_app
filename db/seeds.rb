@@ -1,19 +1,26 @@
-# require 'poke-api-v2'
-# p PokeApi.get(pokemon: 1).sprites.front_default
+require 'poke-api-v2'
+require "http"
 
 # Pokemon.all.each do |poke|
-#   if PokeApi.get(pokemon: poke.pokemon_id)
-#     poke.update(url: PokeApi.get(pokemon: poke.pokemon_id).sprites.front_default)
-#   end
+  # poke.update(url: PokeApi.get(pokemon: poke.pokemon_id).sprites.front_default)
   # poke.update(url: "")
 # end 
 
-# Pokemon.where(url: "").pluck(:id).each do |poke|
-#   Pokemon.find(poke).update(url: PokeApi.get(pokemon: poke).sprites.front_default)
+# Pokemon.all.each do |poke|
+#   if poke.name.index("-") && !poke.name.index("arceus") && !poke.name.index("cherrim") && !poke.name.index("burmy") && !poke.name.index("gastrodon")
+#     reqq = "https://pokeapi.co/api/v2/pokemon/#{poke.id}"
+#     req = HTTP.get(reqq)
+#     res = req.parse['forms']
+#     ress = HTTP.get(res[0]['url']).parse["sprites"]["front_default"]
+#     poke.update(url: ress)
+#     p ress
+#     # p poke.name
+#   elsif !poke.name.index("-")
+#     poke.update(url: PokeApi.get(pokemon: poke.pokemon_id).sprites.front_default)
+#   end 
 # end 
 
-# p PokeApi.get(pokemon: 490).sprites.front_default
-# require "http"
+# p PokeApi.get(pokemon: "gastrodon").sprites
 
 # Stats
 # stats_request = HTTP.get("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json",
