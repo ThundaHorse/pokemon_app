@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_180822) do
+ActiveRecord::Schema.define(version: 2019_09_05_225518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_180822) do
     t.boolean "shiny_raid", default: false
     t.boolean "shiny_wild", default: false
     t.text "url"
+    t.text "shiny_url", default: ""
   end
 
 end

@@ -2,6 +2,7 @@ json.id @pokemon.id
 json.pokemon_id @pokemon.pokemon_id 
 json.name @pokemon.name 
 json.url @pokemon.url
+json.shiny_url @pokemon.shiny_url
 json.type @pokemon.pokemon_type
 json.stats do 
   json.max_cp @pokemon.max_cp
