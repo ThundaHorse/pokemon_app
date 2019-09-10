@@ -18,15 +18,12 @@ gem 'uglifier', '>= 1.3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 gem 'poke-api-v2'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem "rspec-rails", "~> 3.8"
+gem "shoulda-matchers", "~> 4.0.1"
+gem 'rails-controller-testing'
+gem 'simplecov', require: false, group: :test
 
 gem 'figaro'
 
@@ -47,6 +44,14 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem "capybara", ">= 2.15"
+  gem "selenium-webdriver"
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem "chromedriver-helper"
+  gem 'simplecov', require: false
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
