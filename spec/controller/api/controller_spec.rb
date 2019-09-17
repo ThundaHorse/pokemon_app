@@ -32,6 +32,10 @@ end
 
 RSpec.describe Api::PokemonController, type: :controller do 
   describe Api::PokemonController do 
-    it { should route(:index, 'api/pokemon').to(action: :index)}
+    it { should route(:index, 'api/pokemon').to(action: :index) }
+  end 
+
+  describe Api::PokemonController do 
+    it { should route(:show, 'api/pokemon/:id').to(action: :show) }
   end 
 end 
